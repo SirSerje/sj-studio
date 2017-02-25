@@ -1,8 +1,8 @@
 {
-  "name": "sj-studio",
+  "name": "sj_studio",
   "version": "1.0.0",
-  "description": "gulp for push on server and sass less compiler",
-  "main": "index.js",
+  "description": "Workflow: по задаче делается отдельная ветка с названием по примеру 14_fix_animation\r коммитов ветке может быть, сколько необходимо, руководствуясь логическим разделением задачи на определенные этапы.\r название коммита должно начинаться с '#14 краткое описание изменений'\r перед началом работы с веткой локально, ее необходимо создать в github репозитории и потом уже делать переход в эту ветку",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/SirSerje/sj_studio.git"
   },
-  "author": "SirSerje",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/SirSerje/sj_studio/issues"
@@ -18,7 +18,6 @@
   "homepage": "https://github.com/SirSerje/sj_studio#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-less": "^3.3.0",
     "gulp-sass": "^3.1.0"
   }
 }
