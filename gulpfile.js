@@ -2,9 +2,10 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 var input = './sass/**/*.scss';
-var input1 = 'style.scss';
 var output = './test';
-var output1 = './';
+
+var input1 = './css/main/style.scss';
+var output1 = './css/main/';
 
 var sassOptions = {
     errLogToConsole: true,
