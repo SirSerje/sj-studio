@@ -19,7 +19,7 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(output));
 });
 
-gulp.task('sass1', function () {
+gulp.task('sass-main', function () {
     return gulp
         .src(input1)
         .pipe(sass(sassOptions).on('error', sass.logError))
