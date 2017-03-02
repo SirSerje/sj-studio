@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5319b379-4c0f-4c84-9f49-07c10a590606" name="sj photo" url="http://sjphotos.ftp.ukraine.com.ua">
+        <fileTransfer host="sjphotos.ftp.ukraine.com.ua" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
