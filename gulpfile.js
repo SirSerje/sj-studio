@@ -1,11 +1,15 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var jade = require('gulp-jade');
 
 var input = './sass/**/*.scss';
 var output = './test';
 
 var input1 = './css/main/style.scss';
 var output1 = './css/main/';
+
+var jadeinput = "*.jade";
+var jadeoutput = "./jadeTest/";
 
 var sassOptions = {
     errLogToConsole: true,
@@ -24,4 +28,14 @@ gulp.task('sass-main', function () {
         .src(input1)
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(gulp.dest(output1));
+});
+
+gulp.task('jadetest', function() {
+    var YOUR_LOCALS = {};
+
+    gulp.src(jadeinput)
+        .pipe(jade({
+            locals: YOUR_LOCALS
+        }))
+        .pipe(gulp.dest(jadeoutput))
 });
