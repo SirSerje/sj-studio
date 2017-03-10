@@ -12,7 +12,7 @@ var input1 = './css/main/style.scss';
 var output1 = './css/main/';
 
 var jadeInput = "*.jade";
-var jadeOutput = "./jadeTest/";
+var jadeOutput = "./";
 
 var spaceportDestination = '/sj-photostudio.com/spaceport';
 var sassOptions = {

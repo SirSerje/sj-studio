@@ -1,7 +1,720 @@
+doctype html
+html(dir='ltr', lang='en-US')
+    head
 
-Body
-    div
-        h1 Practical Node.js
-        p The only book most people will ever need.
-    div
-        footer &copy; Apress
+        meta(http-equiv='content-type', content='text/html; charset=utf-8')
+        meta(name='author', content='SemiColonWeb')
+
+        // ============================================
+
+        link(href='http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic', rel='stylesheet', type='text/css')
+        link(rel='stylesheet', href='css/bootstrap.css', type='text/css')
+        link(rel='stylesheet', href='css/main/style.css', type='text/css')
+        link(rel='stylesheet', href='css/swiper.css', type='text/css')
+        link(rel='stylesheet', href='css/dark.css', type='text/css')
+        link(rel='stylesheet', href='css/font-icons.css', type='text/css')
+        link(rel='stylesheet', href='css/animate.css', type='text/css')
+        link(rel='stylesheet', href='css/magnific-popup.css', type='text/css')
+        link(rel='stylesheet', href='css/responsive.css', type='text/css')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        // Document T============================================
+
+        title Canvas | The Multi-Purpose HTML5 Template
+    body.stretched
+
+        // Document Wrapper =============================================
+        #wrapper.clearfix
+            // Header =============================================
+            header#header.transparent-header.full-header(data-sticky-class='not-dark')
+                #header-wrap
+                    .container.clearfix
+                        #primary-menu-trigger
+                            i.icon-reorder
+                        //
+                          Logo
+                          =============================================
+                        #logo
+                            a.standard-logo(href='index.html', data-dark-logo='images/logo-dark.png')
+                                img(src='images/logo.png', alt='Canvas Logo')
+                            a.retina-logo(href='index.html', data-dark-logo='images/logo-dark@2x.png')
+                                img(src='images/logo@2x.png', alt='Canvas Logo')
+                        // #logo end
+
+
+                        // Primary Navigation ============================================
+                        nav#primary-menu.dark
+                            ul
+                                li.current
+                                    a(href='index.html')
+                                        div Home
+                                li
+                                    a(href='#')
+                                        div Features
+                                li.mega-menu
+                                    a(href='#')
+                                        div Pages
+                                li.mega-menu
+                                    a(href='#')
+                                        div Portfolio
+                                li.mega-menu
+                                    a(href='#')
+                                        div Blog
+                                li
+                                    a(href='shop.html')
+                                        div Shop
+                                li.mega-menu
+                                    a(href='#')
+                                        div Shortcodes
+                        // #primary-menu end
+            // #header end
+
+
+            // TODO решить проблему с дублирующимися тегами
+            section#slider.slider-parallax.swiper_wrapper.full-screen.clearfix
+                .slider-parallax-inner
+                    .swiper-container.swiper-parent
+                        .swiper-wrapper
+                            .swiper-slide.dark(style="background-image: url('images/slider/swiper/1.jpg');")
+                                .container.clearfix
+                                    .slider-caption.slider-caption-center
+                                        h2(data-caption-animate='fadeInUp') Діброва дышать
+                                        p(data-caption-animate='fadeInUp', data-caption-delay='200')
+                                            | Create just what you need for your Perfect Website. Choose from a wide range of Elements & simply put them on your own Canvas.
+                            .swiper-slide.dark
+                                .container.clearfix
+                                    .slider-caption.slider-caption-center
+                                        h2(data-caption-animate='fadeInUp') Beautifully Flexible
+                                        p(data-caption-animate='fadeInUp', data-caption-delay='200')
+                                            | Looks beautiful & ultra-sharp on Retina Screen Displays. Powerful Layout with Responsive functionality that can be adapted to any screen size.
+                                .video-wrap
+                                    video#slide-video(poster='images/videos/explore.jpg', preload='auto', loop='', autoplay='', muted='')
+                                        source(src='images/videos/explore.webm', type='video/webm')
+                                        source(src='images/videos/explore.mp4', type='video/mp4')
+                                    .video-overlay(style='background-color: rgba(0,0,0,0.55);')
+                            .swiper-slide(style="background-image: url('images/slider/swiper/3.jpg'); background-position: center top;")
+                                .container.clearfix
+                                    .slider-caption
+                                        h2(data-caption-animate='fadeInUp') Great Performance
+                                        p(data-caption-animate='fadeInUp', data-caption-delay='200')
+                                            | You'll be surprised to see the Final Results of your Creation & would crave for more.
+                        #slider-arrow-left
+                            i.icon-angle-left
+                        #slider-arrow-right
+                            i.icon-angle-right
+                    a.dark.one-page-arrow(href='#', data-scrollto='#content', data-offset='100')
+                        i.icon-angle-down.infinite.animated.fadeInDown
+
+
+
+            //
+              Content
+              =============================================
+            section#content
+                .content-wrap
+                    .heading-block.center
+                        h2 Фотозалы
+                        span Вот такие вот залы представлены у нас на сайте
+                    .container.clearfix
+                        //
+                          Portfolio Filter
+                          =============================================
+                        //
+                          <ul id="portfolio-filter" class="portfolio-filter clearfix" data-container="#portfolio">
+                          <li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
+                          <li><a href="#" data-filter=".pf-icons">Icons</a></li>
+                          <li><a href="#" data-filter=".pf-illustrations">Illustrations</a></li>
+                          <li><a href="#" data-filter=".pf-uielements">UI Elements</a></li>
+                          <li><a href="#" data-filter=".pf-media">Media</a></li>
+                          <li><a href="#" data-filter=".pf-graphics">Graphics</a></li>
+                          </ul>
+                        // #portfolio-filter end
+                        //
+                          <div id="portfolio-shuffle" class="portfolio-shuffle" data-container="#portfolio">
+                          <i class="icon-random"></i>
+                          </div>
+                        .clear
+                        //
+                          Portfolio Items
+                          =============================================
+                        #portfolio.portfolio.portfolio-1.grid-container.portfolio-fullwidth.clearfix
+                            article.portfolio-item.pf-media.pf-icons.clearfix
+                                .portfolio-image
+                                    a(href='portfolio-single.html')
+                                        img(src='images/portfolio/1/1.jpg', alt='Open Imagination')
+                                    .portfolio-overlay
+                                        a.left-icon(href='images/portfolio/full/1.jpg', data-lightbox='image')
+                                            i.icon-line-plus
+                                        a.right-icon(href='portfolio-single.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single.html') Open Imagination
+                                    span
+                                        a(href='#') Media
+                                        | ,
+                                        a(href='#') Icons
+                                    p
+                                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, nobis voluptates deleniti atque voluptate perferendis fugiat eligendi accusantium inventore dolorum!
+                                    ul.iconlist
+                                        li
+                                            i.icon-ok
+                                            strong Created Using:
+                                            |  PHP, HTML5, CSS3
+                                        li
+                                            i.icon-ok
+                                            strong Completed on:
+                                            |  12th January, 2014
+                                        li
+                                            i.icon-ok
+                                            strong By:
+                                            |  John Doe
+                                    a.button.button-3d.noleftmargin(href='portfolio-single.html') Launch Project
+                            article.portfolio-item.pf-illustrations.alt.clearfix
+                                .portfolio-image
+                                    a(href='portfolio-single.html')
+                                        img(src='images/portfolio/1/2.jpg', alt='Locked Steel Gate')
+                                    .portfolio-overlay
+                                        a.left-icon(href='images/portfolio/full/2.jpg', data-lightbox='image')
+                                            i.icon-line-plus
+                                        a.right-icon(href='portfolio-single.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single.html') Locked Steel Gate
+                                    span
+                                        a(href='#') Illustrations
+                                    p
+                                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum tempore aliquid consequuntur eveniet deserunt eaque praesentium eligendi ad sequi doloremque.
+                                    ul.iconlist
+                                        li
+                                            i.icon-ok
+                                            strong Created Using:
+                                            |  HTML5, CSS3, jQuery
+                                        li
+                                            i.icon-ok
+                                            strong Completed on:
+                                            |  14th February, 2014
+                                        li
+                                            i.icon-ok
+                                            strong By:
+                                            |  Mary Jane
+                                    a.button.button-3d.noleftmargin(href='portfolio-single.html') Launch Project
+                        // #portfolio end
+            // #content end
+
+
+
+
+            // Calendar =============================================
+            .section.nobottommargin
+                .container.clear-bottommargin.clearfix
+                    .row.topmargin-sm.clearfix
+                        iframe(src='\
+            https://calendar.google.com/calendar/embed?showTitle=0&\
+            showPrint=0&\
+            showTabs=0&\
+            showCalendars=0&\
+            showTz=0&\
+            height=600&\
+            wkst=2&\
+            bgcolor=%23ffffff&\
+            src=sjphotostudio.manager%40gmail.com&\
+            color=%231B887A&\
+            ctz=Europe%2FKiev', width='100%', height='600', frameborder='0', scrolling='no')
+            // End of calendar =============================================
+
+
+
+            .section.nomargin
+                .container.clearfix
+                    .heading-block.center
+                        h2 Features List.
+                        span We provide a wide array of Usable & Flexible Features
+                    .row
+                        .col-md-4.bottommargin
+                            img.center-block(data-animate='fadeInLeftBig', src='images/services/iphone.png', alt='iPhone')
+                        .col-md-4.col-sm-6.topmargin.bottommargin
+                            .col_full
+                                .feature-box.fbox-plain.fbox-small.fbox-dark
+                                    .fbox-icon
+                                        a(href='#')
+                                            i.icon-line-monitor
+                                    h3 Responsive Layout
+                                    p
+                                        | Powerful Layout with Responsive functionality that can be adapted to any screen size. Resize browser to view the changes.
+                            .col_full
+                                .feature-box.fbox-plain.fbox-small.fbox-dark
+                                    .fbox-icon
+                                        a(href='#')
+                                            i.icon-line-eye
+                                    h3 Retina Ready Graphics
+                                    p
+                                        | Looks beautiful & ultra-sharp on Retina Screen Displays. Retina Icons, Fonts & all others graphics are optimized.
+                            .col_full
+                                .feature-box.fbox-plain.fbox-small.fbox-dark
+                                    .fbox-icon
+                                        a(href='#')
+                                            i.icon-line-power
+                                    h3 My some text
+                                    p Lorem ipsum
+                            .col_full.nobottommargin
+                                .feature-box.fbox-plain.fbox-small.fbox-dark
+                                    .fbox-icon
+                                        a(href='#')
+                                            i.icon-line-power
+                                    h3 Powerful Performance
+                                    p
+                                        | Canvas includes tons of optimized code that are completely customizable and deliver unmatched fast performance.
+                        .col-md-4.col-sm-6.topmargin.bottommargin
+                            .col_full
+                                .feature-box.fbox-plain.fbox-small.fbox-dark
+                                    .fbox-icon
+                                        a(href='#')
+                                            i.icon-line-layers
+                                    h3 Premium Sliders Included
+                                    p
+                                        | Canvas included 20+ custom designed Slider Pages with Premium Sliders like Layer, Revolution, Swiper & others.
+                            .col_full
+                                .feature-box.fbox-plain.fbox-small.fbox-dark
+                                    .fbox-icon
+                                        a(href='#')
+                                            i.icon-line-star
+                                    h3 Unlimited Color Options
+                                    p
+                                        | Change the Color Scheme of the Theme in a flash just by changing the 6-digit HEX code provided in the colors.php file.
+                            .col_full.nobottommargin
+                                .feature-box.fbox-plain.fbox-small.fbox-dark
+                                    .fbox-icon
+                                        a(href='#')
+                                            i.icon-line-anchor
+                                    h3 CUSTOMIZABLE FONTS
+                                    p
+                                        | e books concern a wizard called Harry Potter and his journey through
+                                        | Hogwarts School of Witchcraft and Wizardry. The stories tell of him
+                                        | overcoming dangerous obstacles to defeat the Dark wizard Lord Voldemort
+                                        | who killed his parents when Harry was 15 months old. The first book,
+                                        | Harry Potter and The Philosopher's Stone, was published in 1997 by Bloomsbury in
+                                        | London. The last book, Harry Potter and the Deathly Hallows, sold more than 12
+                                        | million copies in the U.S.
+
+
+
+            // Page Sub Menu ============================================
+            #page-menu.no-sticky
+                #page-menu-wrap
+                    .container.clearfix
+                        .menu-title
+                            | Portfolio
+                            span Variations
+                        #page-submenu-trigger
+                            i.icon-reorder
+            // #page-menu end
+
+
+
+
+            // Content =============================================
+            section#content
+                .content-wrap
+                    .container.clearfix
+                        // Portfolio Filter =============================================
+                        ul#portfolio-filter.portfolio-filter.clearfix(data-container='#portfolio')
+                            li.activeFilter
+                                a(href='#', data-filter='*') Show All
+                            li
+                                a(href='#', data-filter='.pf-icons') Icons
+                            li
+                                a(href='#', data-filter='.pf-illustrations') Illustrations
+                            li
+                                a(href='#', data-filter='.pf-uielements') UI Elements
+                            li
+                                a(href='#', data-filter='.pf-media') Media
+                            li
+                                a(href='#', data-filter='.pf-graphics') Graphics
+                        // #portfolio-filter end
+                        #portfolio-shuffle.portfolio-shuffle(data-container='#portfolio')
+                            i.icon-random
+                        .clear
+                        // Portfolio Items =============================================
+                        #portfolio.portfolio.grid-container.portfolio-nomargin.clearfix
+                            article.portfolio-item.pf-media.pf-icons
+                                .portfolio-image
+                                    a(href='portfolio-single.html')
+                                        img(src='images/portfolio/4/1.jpg', alt='Open Imagination')
+                                    .portfolio-overlay
+                                        a.left-icon(href='images/portfolio/full/1.jpg', data-lightbox='image')
+                                            i.icon-line-plus
+                                        a.right-icon(href='portfolio-single.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single.html') Open Imagination
+                                    span
+                                        a(href='#') Media
+                                        | ,
+                                        a(href='#') Icons
+                            article.portfolio-item.pf-illustrations
+                                .portfolio-image
+                                    a(href='portfolio-single.html')
+                                        img(src='images/portfolio/4/2.jpg', alt='Locked Steel Gate')
+                                    .portfolio-overlay
+                                        a.left-icon(href='images/portfolio/full/2.jpg', data-lightbox='image')
+                                            i.icon-line-plus
+                                        a.right-icon(href='portfolio-single.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single.html') Locked Steel Gate
+                                    span
+                                        a(href='#') Illustrations
+                            article.portfolio-item.pf-graphics.pf-uielements
+                                .portfolio-image
+                                    a(href='#')
+                                        img(src='images/portfolio/4/3.jpg', alt='Mac Sunglasses')
+                                    .portfolio-overlay
+                                        a.left-icon(href='http://vimeo.com/89396394', data-lightbox='iframe')
+                                            i.icon-line-play
+                                        a.right-icon(href='portfolio-single-video.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single-video.html') Mac Sunglasses
+                                    span
+                                        a(href='#') Graphics
+                                        | ,
+                                        a(href='#') UI Elements
+                            article.portfolio-item.pf-icons.pf-illustrations
+                                .portfolio-image
+                                    .fslider(data-arrows='false', data-speed='400', data-pause='4000')
+                                        .flexslider
+                                            .slider-wrap
+                                                .slide
+                                                    a(href='portfolio-single-gallery.html')
+                                                        img(src='images/portfolio/4/4.jpg', alt='Morning Dew')
+                                                .slide
+                                                    a(href='portfolio-single-gallery.html')
+                                                        img(src='images/portfolio/4/4-1.jpg', alt='Morning Dew')
+                                    .portfolio-overlay(data-lightbox='gallery')
+                                        a.left-icon(href='images/portfolio/full/4.jpg', data-lightbox='gallery-item')
+                                            i.icon-line-stack-2
+                                        a.hidden(href='images/portfolio/full/4-1.jpg', data-lightbox='gallery-item')
+                                        a.right-icon(href='portfolio-single-gallery.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single-gallery.html') Morning Dew
+                                    span
+                                        a(href='#')
+                                            a(href='#') Icons
+                                            | ,
+                                            a(href='#') Illustrations
+                                    // TODO: this element need review
+                            article.portfolio-item.pf-uielements.pf-media
+                                .portfolio-image
+                                    a(href='portfolio-single.html')
+                                        img(src='images/portfolio/4/5.jpg', alt='Console Activity')
+                                    .portfolio-overlay
+                                        a.left-icon(href='images/portfolio/full/5.jpg', data-lightbox='image')
+                                            i.icon-line-plus
+                                        a.right-icon(href='portfolio-single.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single.html') Console Activity
+                                    span
+                                        a(href='#') UI Elements
+                                        | ,
+                                        a(href='#') Media
+                            article.portfolio-item.pf-graphics.pf-illustrations
+                                .portfolio-image
+                                    .fslider(data-arrows='false')
+                                        .flexslider
+                                            .slider-wrap
+                                                .slide
+                                                    a(href='portfolio-single-gallery.html')
+                                                        img(src='images/portfolio/4/6.jpg', alt='Shake It')
+                                                .slide
+                                                    a(href='portfolio-single-gallery.html')
+                                                        img(src='images/portfolio/4/6-1.jpg', alt='Shake It')
+                                                .slide
+                                                    a(href='portfolio-single-gallery.html')
+                                                        img(src='images/portfolio/4/6-2.jpg', alt='Shake It')
+                                                .slide
+                                                    a(href='portfolio-single-gallery.html')
+                                                        img(src='images/portfolio/4/6-3.jpg', alt='Shake It')
+                                    .portfolio-overlay(data-lightbox='gallery')
+                                        a.left-icon(href='images/portfolio/full/6.jpg', data-lightbox='gallery-item')
+                                            i.icon-line-stack-2
+                                        a.hidden(href='images/portfolio/full/6-1.jpg', data-lightbox='gallery-item')
+                                        a.hidden(href='images/portfolio/full/6-2.jpg', data-lightbox='gallery-item')
+                                        a.hidden(href='images/portfolio/full/6-3.jpg', data-lightbox='gallery-item')
+                                        a.right-icon(href='portfolio-single-gallery.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single-gallery.html') Shake It!
+                                    span
+                                        a(href='#') Illustrations
+                                        | ,
+                                        a(href='#') Graphics
+                            article.portfolio-item.pf-uielements.pf-icons
+                                .portfolio-image
+                                    a(href='portfolio-single-video.html')
+                                        img(src='images/portfolio/4/7.jpg', alt='Backpack Contents')
+                                    .portfolio-overlay
+                                        a.left-icon(href='http://www.youtube.com/watch?v=kuceVNBTJio', data-lightbox='iframe')
+                                            i.icon-line-play
+                                        a.right-icon(href='portfolio-single-video.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single-video.html') Backpack Contents
+                                    span
+                                        a(href='#') UI Elements
+                                        | ,
+                                        a(href='#') Icons
+                            article.portfolio-item.pf-graphics
+                                .portfolio-image
+                                    a(href='portfolio-single.html')
+                                        img(src='images/portfolio/4/8.jpg', alt='Sunset Bulb Glow')
+                                    .portfolio-overlay
+                                        a.left-icon(href='images/portfolio/full/8.jpg', data-lightbox='image')
+                                            i.icon-line-plus
+                                        a.right-icon(href='portfolio-single.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single.html') Sunset Bulb Glow
+                                    span
+                                        a(href='#') Graphics
+                            article.portfolio-item.pf-illustrations.pf-icons
+                                .portfolio-image
+                                    .fslider(data-arrows='false', data-speed='650', data-pause='3500', data-animation='fade')
+                                        .flexslider
+                                            .slider-wrap
+                                                .slide
+                                                    a(href='portfolio-single-gallery.html')
+                                                        img(src='images/portfolio/4/9.jpg', alt='Bridge Side')
+                                                .slide
+                                                    a(href='portfolio-single-gallery.html')
+                                                        img(src='images/portfolio/4/9-1.jpg', alt='Bridge Side')
+                                                .slide
+                                                    a(href='portfolio-single-gallery.html')
+                                                        img(src='images/portfolio/4/9-2.jpg', alt='Bridge Side')
+                                    .portfolio-overlay(data-lightbox='gallery')
+                                        a.left-icon(href='images/portfolio/full/9.jpg', data-lightbox='gallery-item')
+                                            i.icon-line-stack-2
+                                        a.hidden(href='images/portfolio/full/9-1.jpg', data-lightbox='gallery-item')
+                                        a.hidden(href='images/portfolio/full/9-2.jpg', data-lightbox='gallery-item')
+                                        a.right-icon(href='portfolio-single-gallery.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single.html') Bridge Side
+                                    span
+                                        a(href='#') Illustrations
+                                        | ,
+                                        a(href='#') Icons
+                            article.portfolio-item.pf-graphics.pf-media.pf-uielements
+                                .portfolio-image
+                                    a(href='portfolio-single-video.html')
+                                        img(src='images/portfolio/4/10.jpg', alt='Study Table')
+                                    .portfolio-overlay
+                                        a.left-icon(href='http://vimeo.com/91973305', data-lightbox='iframe')
+                                            i.icon-line-play
+                                        a.right-icon(href='portfolio-single-video.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single-video.html') Study Table
+                                    span
+                                        a(href='#') Graphics
+                                        | ,
+                                        a(href='#') Media
+                            article.portfolio-item.pf-media.pf-icons
+                                .portfolio-image
+                                    a(href='portfolio-single.html')
+                                        img(src='images/portfolio/4/11.jpg', alt='Workspace Stuff')
+                                    .portfolio-overlay
+                                        a.left-icon(href='images/portfolio/full/11.jpg', data-lightbox='image')
+                                            i.icon-line-plus
+                                        a.right-icon(href='portfolio-single.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single.html') Workspace Stuff
+                                    span
+                                        a(href='#') Media
+                                        | ,
+                                        a(href='#') Icons
+                            article.portfolio-item.pf-illustrations.pf-graphics
+                                .portfolio-image
+                                    .fslider(data-arrows='false', data-speed='700', data-pause='7000')
+                                        .flexslider
+                                            .slider-wrap
+                                                .slide
+                                                    a(href='portfolio-single-gallery.html')
+                                                        img(src='images/portfolio/4/12.jpg', alt='Fixed Aperture')
+                                                .slide
+                                                    a(href='portfolio-single-gallery.html')
+                                                        img(src='images/portfolio/4/12-1.jpg', alt='Fixed Aperture')
+                                    .portfolio-overlay(data-lightbox='gallery')
+                                        a.left-icon(href='images/portfolio/full/12.jpg', data-lightbox='gallery-item')
+                                            i.icon-line-stack-2
+                                        a.hidden(href='images/portfolio/full/12-1.jpg', data-lightbox='gallery-item')
+                                        a.right-icon(href='portfolio-single-gallery.html')
+                                            i.icon-line-ellipsis
+                                .portfolio-desc
+                                    h3
+                                        a(href='portfolio-single-gallery.html') Fixed Aperture
+                                    span
+                                        a(href='#') Illustrations
+                                        | ,
+                                        a(href='#') Graphics
+                        // #portfolio end
+            // #content end
+
+
+
+
+            // FEEDBACK FORM =====================
+            // TODO необходимо указать в стилях нужный фон секции
+            .section.nomargin
+                .container.clear-bottommargin.clearfix
+                    .heading-block.title-center
+                        h2 Get in Touch with us
+                        span Still have Questions? Contact Us using the Form below.
+                    .row.topmargin-sm.clearfix
+
+
+                        // Contact Form =============================================
+                        .col_half
+                            .fancy-title.title-dotted-border
+                                h3 Send us an Email
+                            .contact-widget
+                                .contact-form-result
+                                form#template-contactform.nobottommargin(name='template-contactform', action='include/sendemail.php', method='post', novalidate='novalidate')
+                                    .form-process
+                                    .col_one_third
+                                        label(for='template-contactform-name')
+                                            | Name
+                                            small *
+                                        input#template-contactform-name.sm-form-control.required(type='text', name='template-contactform-name', value='', aria-required='true')
+                                    .col_one_third
+                                        label(for='template-contactform-email')
+                                            | Email
+                                            small *
+                                        input#template-contactform-email.required.email.sm-form-control(type='email', name='template-contactform-email', value='', aria-required='true')
+                                    .col_one_third.col_last
+                                        label(for='template-contactform-phone') Phone
+                                        input#template-contactform-phone.sm-form-control(type='text', name='template-contactform-phone', value='')
+                                    .clear
+                                    .col_two_third
+                                        label(for='template-contactform-subject')
+                                            | Subject
+                                            small *
+                                        input#template-contactform-subject.required.sm-form-control(type='text', name='template-contactform-subject', value='', aria-required='true')
+                                    .col_one_third.col_last
+                                        label(for='template-contactform-service') Services
+                                        select#template-contactform-service.sm-form-control(name='template-contactform-service')
+                                            option(value='') -- Select One --
+                                            option(value='Wordpress') Wordpress
+                                            option(value='PHP / MySQL') PHP / MySQL
+                                            option(value='HTML5 / CSS3') HTML5 / CSS3
+                                            option(value='Graphic Design') Graphic Design
+                                    .clear
+                                    .col_full
+                                        label(for='template-contactform-message')
+                                            | Message
+                                            small *
+                                        textarea#template-contactform-message.required.sm-form-control(name='template-contactform-message', rows='6', cols='30', aria-required='true')
+                                    .col_full.hidden
+                                        input#template-contactform-botcheck.sm-form-control(type='text', name='template-contactform-botcheck', value='')
+                                    .col_full
+                                        button#template-contactform-submit.button.button-3d.nomargin(type='submit', name='template-contactform-submit', value='submit')
+                                            | Send Message
+                        // Contact Form End =============================================
+
+                        // Google Map =============================================
+                        .col_half.col_last
+                            iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2543.1433164743935!2d30.561355145157663!3d50.4011666213197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1488749762172', width='600', height='450', frameborder='0', style='border:0', allowfullscreen='')
+                            // TODO после подтверждения локации, данный код будет обновлен
+                        // Google Map End
+                        // Contact Info =============================================
+                        .col_full.nobottommargin.clearfix
+                            .col_one_fourth
+                                .feature-box.fbox-center.fbox-bg.fbox-plain
+                                    .fbox-icon
+                                        a(href='#')
+                                            i.icon-map-marker2
+                                    h3
+                                        | Our Headquarters
+                                        span.subtitle Melbourne, Australia
+                            .col_one_fourth
+                                .feature-box.fbox-center.fbox-bg.fbox-plain
+                                    .fbox-icon
+                                        a(href='#')
+                                            i.icon-phone3
+                                    h3
+                                        | Speak to Us
+                                        span.subtitle (123) 456 7890
+                            .col_one_fourth
+                                .feature-box.fbox-center.fbox-bg.fbox-plain
+                                    .fbox-icon
+                                        a(href='#')
+                                            i.icon-skype2
+                                    h3
+                                        | Make a Video Call
+                                        span.subtitle CanvasOnSkype
+                            .col_one_fourth.col_last
+                                .feature-box.fbox-center.fbox-bg.fbox-plain
+                                    .fbox-icon
+                                        a(href='#')
+                                            i.icon-twitter2
+                                    h3
+                                        | Follow on Twitter
+                                        span.subtitle 2.3M Followers
+                        // Contact Info End
+            // END OF FEEDBACK FORM =====================
+
+
+
+
+
+            // Footer =============================================
+            footer#footer.dark
+                // Copyrights =============================================
+                #copyrights
+                    .container.clearfix
+                        .col_half
+                            | Copyrights © 2014 All Rights Reserved by Canvas Inc.
+                            br
+                        .col_half.col_last.tright
+                            .fright.clearfix
+                                a.social-icon.si-small.si-borderless.si-facebook(href='https://www.facebook.com/')
+                                    i.icon-facebook
+                                    i.icon-facebook
+                                a.social-icon.si-small.si-borderless.si-vk(href='https://vk.com')
+                                    i.icon-vk
+                                    i.icon-vk
+                                a.social-icon.si-small.si-borderless.si-gplus(href='https://plus.google.com/')
+                                    i.icon-gplus
+                                    i.icon-gplus
+                            .clear
+                            // TODO необходимо разобраться как правильно сделать кликабельную ссылку на почту
+                            i.icon-envelope2
+                            |  mail@sj-studio.com
+                            span.middot ·
+                            i.icon-headphones
+                            |  +380-111-11-11
+                            span.middot ·
+                // #copyrights end
+            // #footer end
+        // #wrapper end
+        // Go To Top =============================================
+        #gotoTop.icon-angle-up
+        // External JavaScripts =============================================
+        script(type='text/javascript', src='js/jquery.js')
+        script(type='text/javascript', src='js/plugins.js')
+        // Footer Scripts =============================================
+        script(type='text/javascript', src='js/functions.js')
