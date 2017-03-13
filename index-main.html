@@ -52,22 +52,16 @@
                 ============================================= -->
 				<nav id="primary-menu" class="dark">
 
-					<ul>
-						<li class="current"><a href="index.html"><div>Home</div></a>
-						</li>
-						<li><a href="#"><div>Features</div></a>
-						</li>
-						<li class="mega-menu"><a href="#"><div>Pages</div></a>
-						</li>
-						<li class="mega-menu"><a href="#"><div>Portfolio</div></a>
-						</li>
-						<li class="mega-menu"><a href="#"><div>Blog</div></a>
-						</li>
-						<li><a href="shop.html"><div>Shop</div></a>
-						</li>
-						<li class="mega-menu"><a href="#"><div>Shortcodes</div></a>
-						</li>
+					<ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+						<li><a href="#" data-href="#wrapper"><div>Главная</div></a></li>
+						<li><a href="#" data-href="#section-about"><div>Залы</div></a></li>
+						<li><a href="#" data-href="#calendar"><div>Календарь</div></a></li>
+						<li><a href="#" data-href="#section-services"><div>Услуги</div></a></li>
+						<li><a href="#" data-href="#section-photo"><div>Фотографии</div></a></li>
+						<li><a href="#" data-href="#section-contact"><div>Контакты</div></a></li>
 					</ul>
+
+
 
 				</nav><!-- #primary-menu end -->
 
@@ -129,7 +123,7 @@
 
         <div class="content-wrap">
 
-            <div class="heading-block center">
+            <div id="section-about" class="heading-block center">
                 <h2>Фотозалы</h2>
                 <span>Вот такие вот залы представлены у нас на сайте</span>
             </div>
@@ -217,7 +211,7 @@
 
 	<!-- Calendar
             ============================================= -->
-	<div class="section nobottommargin">
+	<div id="calendar" class="section nobottommargin">
 		<div class="container clear-bottommargin clearfix">
 			<div class="row topmargin-sm clearfix">
 
@@ -244,7 +238,7 @@
 	<!-- End of calendar
             ============================================= -->
 
-	<div class="section nomargin">
+	<div id="section-services" class="section nomargin">
 
 		<div class="container clearfix">
 
@@ -387,7 +381,7 @@
 		============================================= -->
 	<section id="content">
 
-		<div class="content-wrap">
+		<div id="section-photo" class="content-wrap">
 
 			<div class="container clearfix">
 
@@ -647,7 +641,7 @@
 	<!--FEEDBACK FORM
 	=====================-->
 	<!-- TODO необходимо указать в стилях нужный фон секции -->
-	<div class="section nomargin">
+	<div id="section-contact" class="section nomargin">
 		<div class="container clear-bottommargin clearfix">
 
 			<div class="heading-block title-center">
