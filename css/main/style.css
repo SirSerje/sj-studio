@@ -620,6 +620,14 @@ span.middot {
   overflow: hidden;
 }
 
+.section-calendar {
+  position: relative;
+  margin: 0px 0;
+  padding: 60px 0;
+  background-color: #FFF;
+  overflow: hidden;
+}
+
 .section .container {
   z-index: 2;
 }

@@ -47,9 +47,9 @@ gulp.task('jade-test', function() {
 gulp.task('spaceport-deploy', function () {
 //TODO WARINNG!!! do not commit with real login / password
     var conn = ftp.create( {
-        host:     'XXXX',              //insert host
-        user:     'XXXX',              //insert user
-        password: 'XXXX',             //insert pass
+        host:     'sjphotos.ftp.ukraine.com.ua',              //insert host
+        user:     'sjphotos_serje',              //insert user
+        password: '3z20jar3',             //insert pass
         parallel: 10,
         log:      gutil.log
     } );
