@@ -1090,6 +1090,7 @@ body.stretched .container-fullwidth {
 body.stretched #header.full-header .container {
   width: 100%;
   padding: 0 30px;
+  background: #ffffff;
 }
 
 #header.transparent-header.full-header #header-wrap {
