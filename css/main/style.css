@@ -3459,6 +3459,7 @@ body:not(.side-header) .slider-parallax .slider-parallax-inner {
 .slider-caption p {
   margin-bottom: 10px;
   font-size: 24px;
+    padding: 5px;
 }
 
 .slider-caption.slider-caption-right {
@@ -4845,7 +4846,7 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-desc {
 }
 
 .portfolio-1.portfolio-fullwidth .portfolio-overlay a {
-  left: 33%;
+  left: 35%;
 }
 
 body:not(.device-touch):not(.device-xs):not(.device-xxs) .portfolio-1.portfolio-fullwidth .portfolio-item .portfolio-image img {
@@ -5209,7 +5210,7 @@ body:not(.device-touch):not(.device-xs):not(.device-xxs) .portfolio-overlay .por
 .portfolio-item:hover .portfolio-overlay a.right-icon,
 .iportfolio:hover .portfolio-overlay a.left-icon,
 .iportfolio:hover .portfolio-overlay a.right-icon {
-  margin-top: -18px;
+  margin-top: -110px;
 }
 
 body.device-touch.device-xs .portfolio-notitle .portfolio-overlay, body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay {
