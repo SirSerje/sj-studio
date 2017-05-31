@@ -148,8 +148,8 @@ body.top-search-open .dark #header-wrap:not(.not-dark) #top-search a,
 .dark #header-wrap:not(.not-dark) #side-panel-trigger a:hover,
 .dark #header-wrap:not(.not-dark) #top-account a:hover,
 .dark #header-wrap:not(.not-dark) #top-search form input {
-	color: #4d4d4d;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+	color: #999999;
+    text-shadow: 1px 1px 1px #333;
 }
 
 .dark #header.full-header #header-wrap:not(.not-dark) #primary-menu > ul,
@@ -313,7 +313,7 @@ body.top-search-open .dark #header-wrap:not(.not-dark) #top-search a,
 .dark .slider-caption,
 .dark .slider-caption h2 {
 	color: #999999;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+    text-shadow: 2px 2px 1px #333333;
 }
 
 .not-dark .slider-caption,
