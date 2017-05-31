@@ -4673,6 +4673,12 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-desc {
   border-bottom: 1px solid #EEE;
 }
 
+@media screen and (max-width: 768px) {
+  .portfolio-1 .portfolio-item {
+    height: auto;
+  }
+}
+
 .portfolio-1 .portfolio-item .portfolio-image,
 .portfolio-1 .portfolio-item .portfolio-image a,
 .portfolio-1 .portfolio-item .portfolio-image img {
