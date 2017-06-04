@@ -4835,7 +4835,6 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-desc {
   padding: 30px;
   background-color: #F9F9F9;
   top: 0;
-  opacity: 0.9;
   left: auto;
   right: -380px;
 }
@@ -5211,12 +5210,13 @@ body:not(.device-touch):not(.device-xs):not(.device-xxs) .portfolio-overlay .por
   opacity: 1;
 }
 
-.portfolio-item:hover .portfolio-overlay a.left-icon,
+/*.portfolio-item:hover .portfolio-overlay a.left-icon,
 .portfolio-item:hover .portfolio-overlay a.right-icon,
 .iportfolio:hover .portfolio-overlay a.left-icon,
 .iportfolio:hover .portfolio-overlay a.right-icon {
   margin-top: -85px;
 }
+*/
 
 body.device-touch.device-xs .portfolio-notitle .portfolio-overlay, body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay {
   display: none !important;
