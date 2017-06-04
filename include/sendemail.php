@@ -5,12 +5,12 @@ require_once('phpmailer/PHPMailerAutoload.php');
 $toemails = array();
 
 $toemails[] = array(
-				'email' => 'roman.alexeychenko@gmail.com', // Your Email Address
-				'name' => 'Your Name' // Your Name
+				'email' => 'sjphotostudio.manager@gmail.com', // Your Email Address
+				'name' => 'SJ Photostudio manager' // Your Name
 			);
 
 // Form Processing Messages
-$message_success = 'We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible.';
+$message_success = 'Ваше повідомлення <strong>НАДІСЛАНО</strong>, ми зв’яжемося з вами якнайшвидше.';
 
 // Add this only if you use reCaptcha with your Contact Forms
 $recaptcha_secret = ''; // Your reCaptcha Secret
@@ -85,13 +85,13 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			if( $sendEmail == true ):
 				echo '{ "alert": "success", "message": "' . $message_success . '" }';
 			else:
-				echo '{ "alert": "error", "message": "Email <strong>could not</strong> be sent due to some Unexpected Error. Please Try Again later.<br /><br /><strong>Reason:</strong><br />' . $mail->ErrorInfo . '" }';
+				echo '{ "alert": "error", "message": "Повідомлення <strong>не може</strong> бути надісланним, спробуйте пізніше.<br /><br /><strong>Reason:</strong><br />' . $mail->ErrorInfo . '" }';
 			endif;
 		} else {
 			echo '{ "alert": "error", "message": "Bot <strong>Detected</strong>.! Clean yourself Botster.!" }';
 		}
 	} else {
-		echo '{ "alert": "error", "message": "Please <strong>Fill up</strong> all the Fields and Try Again." }';
+		echo '{ "alert": "error", "message": "Будь ласка <strong>Заповніть</strong> усі поля і спробуйте знову." }';
 	}
 } else {
 	echo '{ "alert": "error", "message": "An <strong>unexpected error</strong> occured. Please Try Again later." }';
