@@ -5,8 +5,11 @@ require_once('phpmailer/PHPMailerAutoload.php');
 $toemails = array();
 
 $toemails[] = array(
-				'email' => 'sjphotostudio.manager@gmail.com', // Your Email Address
-				'name' => 'SJ Photostudio manager' // Your Name
+				'email' => 'sjphotostudio.manager@gmail.com',
+				'name' => 'SJ Photostudio manager',
+	
+				'email' => 'sir.serje@gmail.com',
+				'name' => 'SSJ'
 			);
 
 // Form Processing Messages
