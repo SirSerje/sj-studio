@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /css/
+Disallow: /demos/
+Disallow: /images/
+Disallow: /include/
+Disallow: /js/
+Disallow: /less/
+Disallow: /one-page/
+Disallow: /sendmail_example/
+Allow: /index.html
+Sitemap: http://sj-photostudio.com/sitemap.xml
