@@ -55,7 +55,7 @@ gulp.task('spaceport-deploy', function () {
     } );
 
     var globs = [
-        'index-main.html',
+        'index.html',
         'js/**',
         'include/**',
         'images/**',
