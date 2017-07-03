@@ -4,6 +4,9 @@ var sass = require('gulp-sass');
 var jade = require('gulp-jade');
 var gutil = require( 'gulp-util' );
 var ftp = require( 'vinyl-ftp' );
+var gulpCopy = require('gulp-copy');
+var otherGulpFunction = require('gulp-other-function');
+var minifyAll = require("minify-all");
 //---------------end requires--------------
 
 var input = './sass/**/*.scss';
@@ -69,3 +72,68 @@ gulp.task('spaceport-deploy', function () {
         //.pipe( conn.newer( '/public_html' ) ) // only upload newer files
         .pipe(conn.dest(spaceportDestination));
 } );
+
+
+gulp.task('prod-deploy', function () {
+    var conn = ftp.create( {
+        host:     'sjphotos.ftp.ukraine.com.ua',
+        user:     'sjphotos_gulptask',
+        password: 'z6h9g79th272si0d',
+        parallel: 10,
+        log:      gutil.log
+    } );
+
+    var globs = [
+        'prod/*',
+    ];
+
+    // using base = '.' will transfer everything to /public_html correctly
+    // turn off buffering in gulp.src for best performance
+
+    return gulp.src( globs, { base: '.', buffer: false } )
+    //.pipe( conn.newer( '/public_html' ) ) // only upload newer files
+        .pipe(conn.dest(spaceportDestination));
+} );
+
+gulp.task('copy-to-prod', function (){
+
+    var sourceFiles = [
+        'css/*',
+        'images/*',
+        'include/*',
+        'js/*',
+        'node_modules/*',
+        'one-page/*',
+        'prod/*',
+        'sass/*',
+        'sendmail_example/*',
+        '.htaccess',
+        '404.html',
+        'index.html',
+        'robots.txt',
+        'sitemap.html',
+        'sitemap.xml',
+        'style-import.css',
+        'style-rtl.css'
+    ];
+    var destination = 'prod/';
+
+    return gulp
+        .src(sourceFiles)
+        .pipe(gulpCopy(outputPath, options))
+        .pipe(otherGulpFunction())
+        .dest(destination);
+
+})
+
+gulp.task('minify-all', function () {
+
+    minifyAll("prod/", { silent: true }, function(err){
+        if(err){
+            console.log(err);
+        }
+    });
+
+
+
+})
