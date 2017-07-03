@@ -24,6 +24,7 @@
     "require-dir": "^0.3.1",
     "vinyl-ftp": "^0.6.0",
     "gulp-copy":"^1.0.0",
-    "minify-all": "^1.2.2"
+    "minify-all": "^1.2.2",
+    "gulp-rename": "^1.2.2"
   }
 }

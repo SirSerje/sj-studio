@@ -2,11 +2,9 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var jade = require('gulp-jade');
-var gutil = require( 'gulp-util' );
-var ftp = require( 'vinyl-ftp' );
-var gulpCopy = require('gulp-copy');
-var otherGulpFunction = require('gulp-other-function');
-var minifyAll = require("minify-all");
+var gutil = require('gulp-util');
+var ftp = require('vinyl-ftp');
+var rename = require('gulp-rename');
 //---------------end requires--------------
 
 var input = './sass/**/*.scss';
@@ -18,6 +16,7 @@ var jadeInput = "*.jade";
 var jadeOutput = "./";
 
 var spaceportDestination = '/sj-photostudio.com/spaceport';
+var prodDestination = '/sj-photostudio.com/';
 var sassOptions = {
     errLogToConsole: true,
     outputStyle: 'expanded' /* compressed expanded */
@@ -37,7 +36,7 @@ gulp.task('sass-main', function () {
         .pipe(gulp.dest(output1));
 });
 
-gulp.task('jade-test', function() {
+gulp.task('jade-test', function () {
     var YOUR_LOCALS = {};
 
     gulp.src(jadeInput)
@@ -49,13 +48,13 @@ gulp.task('jade-test', function() {
 
 gulp.task('spaceport-deploy', function () {
 //TODO WARINNG!!! do not commit with real login / password
-    var conn = ftp.create( {
-        host:     'sjphotos.ftp.ukraine.com.ua',              //insert host
-        user:     'sjphotos_serje',              //insert user
+    var conn = ftp.create({
+        host: 'sjphotos.ftp.ukraine.com.ua',              //insert host
+        user: 'sjphotos_serje',              //insert user
         password: '3z20jar3',             //insert pass
         parallel: 10,
-        log:      gutil.log
-    } );
+        log: gutil.log
+    });
 
     var globs = [
         'index.html',
@@ -65,75 +64,76 @@ gulp.task('spaceport-deploy', function () {
         'css/**'
     ];
 
-    // using base = '.' will transfer everything to /public_html correctly
-    // turn off buffering in gulp.src for best performance
 
-    return gulp.src( globs, { base: '.', buffer: false } )
-        //.pipe( conn.newer( '/public_html' ) ) // only upload newer files
+    return gulp.src(globs, {base: '.', buffer: false})
+    //.pipe( conn.newer( '/public_html' ) ) // only upload newer files
         .pipe(conn.dest(spaceportDestination));
-} );
+});
 
 
 gulp.task('prod-deploy', function () {
-    var conn = ftp.create( {
-        host:     'sjphotos.ftp.ukraine.com.ua',
-        user:     'sjphotos_gulptask',
+    var conn = ftp.create({
+        host: 'sjphotos.ftp.ukraine.com.ua',
+        user: 'sjphotos_gulptask',
         password: 'z6h9g79th272si0d',
         parallel: 10,
-        log:      gutil.log
-    } );
-
-    var globs = [
-        'prod/*',
-    ];
-
-    // using base = '.' will transfer everything to /public_html correctly
-    // turn off buffering in gulp.src for best performance
-
-    return gulp.src( globs, { base: '.', buffer: false } )
-    //.pipe( conn.newer( '/public_html' ) ) // only upload newer files
-        .pipe(conn.dest(spaceportDestination));
-} );
-
-gulp.task('copy-to-prod', function (){
-
-    var sourceFiles = [
-        'css/*',
-        'images/*',
-        'include/*',
-        'js/*',
-        'node_modules/*',
-        'one-page/*',
-        'prod/*',
-        'sass/*',
-        'sendmail_example/*',
-        '.htaccess',
-        '404.html',
-        'index.html',
-        'robots.txt',
-        'sitemap.html',
-        'sitemap.xml',
-        'style-import.css',
-        'style-rtl.css'
-    ];
-    var destination = 'prod/';
-
-    return gulp
-        .src(sourceFiles)
-        .pipe(gulpCopy(outputPath, options))
-        .pipe(otherGulpFunction())
-        .dest(destination);
-
-})
-
-gulp.task('minify-all', function () {
-
-    minifyAll("prod/", { silent: true }, function(err){
-        if(err){
-            console.log(err);
-        }
+        log: gutil.log
     });
 
+    var globs = [
+        'www/**/*',
+    ];
+
+    return gulp.src(globs, {base: '.', buffer: false})
+        .pipe(conn.dest(prodDestination));
+});
 
 
-})
+
+
+gulp.task('copydest', [], function () {
+
+    gulp.copy = function (src, dest) {
+        return gulp.src(src, {base: "."})
+            .pipe(gulp.dest(dest));
+    };
+
+    var sourceFiles = [
+        // 'css/**/*',
+        // 'images/**/*',
+        // 'include/**/*',
+        // 'js/**/*',
+        // 'one-page/**/*',
+        // 'sass/**/*',
+        // 'sendmail_example/**/*',
+        // '.htaccess',
+        // '404.html',
+         'index.html',
+        // 'robots.txt',
+        // 'sitemap.html',
+        // 'sitemap.xml',
+        // 'style-import.css',
+        // 'style-rtl.css'
+    ];
+    var destination = [
+        // 'www/',
+        // 'www/',
+        // 'www/',
+         'www/',
+        // 'www/',
+        // 'www/',
+        // 'www/',
+        // 'www/',
+        // 'www/',
+        // 'www/',
+        // 'www/',
+        // 'www/',
+        // 'www/',
+        // 'www/',
+        // 'www/'
+    ];
+    for (var i = 0; i < destination.length; i++) {
+        gulp.copy(sourceFiles[i], destination[i])
+    }
+
+});
