@@ -89,8 +89,6 @@ gulp.task('prod-deploy', function () {
 });
 
 
-
-
 gulp.task('copydest', [], function () {
 
     gulp.copy = function (src, dest) {
@@ -99,41 +97,76 @@ gulp.task('copydest', [], function () {
     };
 
     var sourceFiles = [
-        // 'css/**/*',
-        // 'images/**/*',
-        // 'include/**/*',
-        // 'js/**/*',
-        // 'one-page/**/*',
-        // 'sass/**/*',
-        // 'sendmail_example/**/*',
-        // '.htaccess',
-        // '404.html',
-         'index.html',
-        // 'robots.txt',
-        // 'sitemap.html',
-        // 'sitemap.xml',
-        // 'style-import.css',
-        // 'style-rtl.css'
+        'css/**/*',
+        'images/**/*',
+        'include/**/*',
+        'js/**/*',
+        'one-page/**/*',
+        'sass/**/*',
+        'sendmail_example/**/*',
+        '.htaccess',
+        '404.html',
+        'index.html',
+        'robots.txt',
+        'sitemap.html',
+        'sitemap.xml',
+        'style-import.css',
+        'style-rtl.css'
     ];
     var destination = [
-        // 'www/',
-        // 'www/',
-        // 'www/',
-         'www/',
-        // 'www/',
-        // 'www/',
-        // 'www/',
-        // 'www/',
-        // 'www/',
-        // 'www/',
-        // 'www/',
-        // 'www/',
-        // 'www/',
-        // 'www/',
-        // 'www/'
+        'www/',
+        'www/',
+        'www/',
+        'www/',
+        'www/',
+        'www/',
+        'www/',
+        'www/',
+        'www/',
+        'www/',
+        'www/',
+        'www/',
+        'www/',
+        'www/',
+        'www/'
     ];
     for (var i = 0; i < destination.length; i++) {
         gulp.copy(sourceFiles[i], destination[i])
     }
 
 });
+
+var htmlmin = require('gulp-htmlmin');
+gulp.task('html-min', [], function () {
+
+    return gulp.src(['index.html', '404.html']).pipe(htmlmin({
+        collapseWhitespace: true,
+        removeComments: true,
+        minifyCSS: true,
+        minifyJS: true
+    })).pipe(gulp.dest('www/'));
+});
+
+
+gulp.task('css-min', [], function () {
+    return gulp.src('css/**/*.css').pipe(htmlmin({
+        collapseWhitespace: true,
+        removeComments: true,
+        minifyCSS: true,
+        minifyJS: true
+    })).pipe(gulp.dest('www/css'));
+});
+
+
+gulp.task('js-min', [], function () {
+    var gulp = require('gulp'),
+        uglify = require('gulp-uglify');
+
+
+        gulp.src('js/**/*.js')
+            .pipe(uglify())
+            .pipe(gulp.dest('www/js'));
+    });
+
+
+gulp.task('makeAllPerfect', ['copydest', 'html-min', 'css-min', 'js-min', 'prod-deploy']);

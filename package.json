@@ -25,6 +25,11 @@
     "vinyl-ftp": "^0.6.0",
     "gulp-copy":"^1.0.0",
     "minify-all": "^1.2.2",
-    "gulp-rename": "^1.2.2"
+    "gulp-rename": "^1.2.2",
+    "html-minifier": "^3.5.2",
+    "clean-css": "^4.1.5",
+    "uglify-js": "^3.0.23",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-uglify":"^3.0.0"
   }
 }
