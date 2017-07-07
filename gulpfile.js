@@ -163,10 +163,23 @@ gulp.task('js-min', [], function () {
         uglify = require('gulp-uglify');
 
 
-        gulp.src('js/**/*.js')
-            .pipe(uglify())
-            .pipe(gulp.dest('www/js'));
-    });
+    gulp.src('js/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('www/js'));
+});
+
+gulp.task('minify-img', [], function () {
+    const imagemin = require('imagemin');
+    const imageminJpegtran = require('imagemin-jpegtran');
+    const imageminPngquant = require('imagemin-pngquant');
+
+    imagemin(['images/**/*.{jpg,png}'], 'www/images', {
+        plugins: [
+            imageminJpegtran(),
+            imageminPngquant({quality: '65-80'})
+        ]
+    })
+})
 
 
-gulp.task('makeAllPerfect', ['copydest', 'html-min', 'css-min', 'js-min', 'prod-deploy']);
+gulp.task('makeAllPerfect', ['copydest', 'html-min', 'css-min', 'js-min', 'minify-img']);
