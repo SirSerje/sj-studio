@@ -3,8 +3,8 @@ DirectoryIndex /index.html
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteCond %{HTTP_HOST} ^sj-photostudio.com
-    RewriteRule (.*) http://www.sj-photostudio.com/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} ^sj-photostudio\.com$ [NC]
+    RewriteRule ^(.*)$ http://www.sj-photostudio.com/$1 [R=301,L]
 </IfModule>
 
 <ifModule mod_headers.c>
@@ -27,49 +27,49 @@ DirectoryIndex /index.html
 </IfModule>
 
 <ifModule mod_expires.c>
-	ExpiresActive On
-	#по умолчанию кеш в 5 секунд
-	ExpiresDefault "access plus 5 seconds"
-	#кэшировать флэш и изображения на месяц
-	ExpiresByType image/x-icon "access plus 2592000 seconds"
-	ExpiresByType image/jpeg "access plus 2592000 seconds"
-	ExpiresByType image/png "access plus 2592000 seconds"
-	ExpiresByType image/gif "access plus 2592000 seconds"
-	ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
-	#кэшировать css, javascript и текстовые файлы на одну неделю
-	ExpiresByType text/css "access plus 604800 seconds"
-	ExpiresByType text/javascript "access plus 604800 seconds"
-	ExpiresByType application/javascript "access plus 604800 seconds"
-	ExpiresByType application/x-javascript "access plus 604800 seconds"
-	#кэшировать html и htm файлы на один день
-	ExpiresByType text/html "access plus 43200 seconds"
-	#кэшировать xml файлы на десять минут
-	ExpiresByType application/xhtml+xml "access plus 600 seconds"
+    ExpiresActive On
+    #по умолчанию кеш в 5 секунд
+    ExpiresDefault "access plus 5 seconds"
+    # Включаем кэширование изображений и флэш на месяц
+    ExpiresByType image/x-icon "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 4 weeks"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/gif "access plus 43829 minutes"
+    ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+    # Включаем кэширование css, javascript и текстовых файлов на одну неделю
+    ExpiresByType text/css "access plus 604800 seconds"
+    ExpiresByType text/javascript "access plus 604800 seconds"
+    ExpiresByType application/javascript "access plus 604800 seconds"
+    ExpiresByType application/x-javascript "access plus 604800 seconds"
+    # Включаем кэширование html и htm файлов на один день
+    ExpiresByType text/html "access plus 43200 seconds"
+    # Включаем кэширование xml файлов на десять минут
+    ExpiresByType application/xhtml+xml "access plus 600 seconds"
 </ifModule>
 
 
 
 # Bad Rquest
-ErrorDocument 400 /400.html
+ErrorDocument 400 /404.html
 # Authorization Required
-ErrorDocument 401 /401.html
+ErrorDocument 401 /404.html
 # Forbidden
-ErrorDocument 403 /403.html
+ErrorDocument 403 /404.html
 # Not found
 ErrorDocument 404 /404.html
 # Method Not Allowed
-ErrorDocument 405 /405.html
+ErrorDocument 405 /404.html
 # Request Timed Out
-ErrorDocument 408 /408.html
+ErrorDocument 408 /404.html
 # Request URI Too Long
-ErrorDocument 414 /414.html
+ErrorDocument 414 /404.html
 # Internal Server Error
-ErrorDocument 500 /500.html
+ErrorDocument 500 /404.html
 # Not Implemented
-ErrorDocument 501 /501.html
+ErrorDocument 501 /404.html
 # Bad Gateway
-ErrorDocument 502 /502.html
+ErrorDocument 502 /404.html
 # Service Unavailable
-ErrorDocument 503 /503.html
+ErrorDocument 503 /404.html
 # Gateway Timeout
-ErrorDocument 504 /504.html
+ErrorDocument 504 /404.html
