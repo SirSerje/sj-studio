@@ -76,7 +76,7 @@ gulp.task('prod-deploy', function () {
         host: 'sjphotos.ftp.ukraine.com.ua',
         user: 'sjphotos_gulptask',
         password: 'z6h9g79th272si0d',
-        parallel: 10,
+        parallel: 8,
         log: gutil.log
     });
 
@@ -101,8 +101,6 @@ gulp.task('copydest', [], function () {
         'images/**/*',
         'include/**/*',
         'js/**/*',
-        'one-page/**/*',
-        'sass/**/*',
         'sendmail_example/**/*',
         '.htaccess',
         '404.html',
@@ -114,8 +112,6 @@ gulp.task('copydest', [], function () {
         'style-rtl.css'
     ];
     var destination = [
-        'www/',
-        'www/',
         'www/',
         'www/',
         'www/',
@@ -182,4 +178,4 @@ gulp.task('minify-img', [], function () {
 })
 
 
-gulp.task('makeAllPerfect', ['copydest', 'html-min', 'css-min', 'js-min', 'minify-img']);
+gulp.task('makeAllPerfect', ['copydest', 'html-min', 'css-min', 'js-min', 'minify-img'/*, 'prod-deploy'*/]);
